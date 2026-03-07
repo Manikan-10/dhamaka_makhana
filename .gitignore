@@ -1,0 +1,5 @@
+node_modules/
+dhamaka-makhana/node_modules/
+dhamaka-makhana/build/
+.env
+*.mp4
