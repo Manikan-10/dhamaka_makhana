@@ -1,7 +1,7 @@
 {
   "name": "dhamaka-makhana",
   "version": "1.0.0",
-  "homepage": "https://manikan-10.github.io/dhamaka_makhana",
+  "homepage": ".",
   "private": true,
   "description": "Dhamaka Makhana - The Snack That Pops!",
   "dependencies": {
