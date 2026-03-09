@@ -5,13 +5,6 @@ const productImages = [
     src: "/images/product1.jpeg",
     alt: "Dhamaka Makhana - The Ancient Indian Superfood",
     name: "Dhamaka Makhana",
-    desc: "The ancient Indian superfood — pure, wholesome, and delicious.",
-  },
-  {
-    src: "/images/product2.png",
-    alt: "Shubha Prasaadam Makhana - Premium Fox Nuts",
-    name: "Shubha Prasaadam",
-    desc: "Premium fox nuts packet — crafted with care and tradition.",
   },
 ];
 
@@ -54,12 +47,9 @@ const ProductImageCard = ({ image, index }) => {
 
       {/* Product Info */}
       <div className="p-5">
-        <h4 className="text-lg md:text-xl font-black uppercase tracking-wide text-primary mb-2">
+        <h4 className="text-lg md:text-xl font-black uppercase tracking-wide text-primary mb-0">
           {image.name}
         </h4>
-        <p className="text-sm text-[#8a8070] leading-relaxed">
-          {image.desc}
-        </p>
       </div>
     </div>
   );
@@ -94,7 +84,7 @@ const ProductShowcase = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+        <div className="max-w-md mx-auto">
           {productImages.map((image, index) => (
             <ProductImageCard key={index} image={image} index={index} />
           ))}

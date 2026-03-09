@@ -1,4 +1,137 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+
+const standForItems = [
+  {
+    icon: "restaurant",
+    title: "Real Food",
+    desc: "Ingredients you recognize and trust",
+    gradient: "from-orange-500 to-amber-400",
+    delay: 0,
+  },
+  {
+    icon: "settings_suggest",
+    title: "Minimal Processing",
+    desc: "No unnecessary intervention",
+    gradient: "from-amber-500 to-yellow-400",
+    delay: 0.1,
+  },
+  {
+    icon: "eco",
+    title: "Natural Nutrition",
+    desc: "No artificial flavours, colours, or preservatives",
+    gradient: "from-emerald-500 to-teal-400",
+    delay: 0.2,
+  },
+  {
+    icon: "favorite",
+    title: "Guilt-Free Snacking",
+    desc: "Good for your body, every day",
+    gradient: "from-rose-500 to-pink-400",
+    delay: 0.3,
+  },
+  {
+    icon: "history_edu",
+    title: "Tradition Meets Today",
+    desc: "Ancient wisdom, modern quality standards",
+    gradient: "from-purple-500 to-indigo-400",
+    delay: 0.4,
+  },
+];
+
+const StandForCard = ({ item }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setIsVisible(true);
+      },
+      { threshold: 0.2 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className={`relative group rounded-2xl p-6 text-left overflow-hidden transition-all duration-500 cursor-pointer
+        bg-[#231c12]/80 border border-[#3d2e1a]/40 hover:border-primary/50
+        ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+        hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10`}
+      style={{
+        transitionDelay: `${item.delay}s`,
+      }}
+    >
+      {/* Animated background glow on hover */}
+      <div
+        className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}
+        style={{
+          background: 'radial-gradient(circle at 30% 30%, rgba(244,148,52,0.12) 0%, transparent 60%)',
+        }}
+      />
+
+      {/* Animated corner accent */}
+      <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden pointer-events-none">
+        <div
+          className={`absolute top-0 right-0 w-24 h-24 -translate-y-12 translate-x-12 rotate-45 transition-all duration-500 ${
+            isHovered ? 'translate-y-[-1.5rem] translate-x-[1.5rem]' : ''
+          }`}
+          style={{
+            background: `linear-gradient(135deg, rgba(244,148,52,0.3), rgba(251,191,36,0.15))`,
+          }}
+        />
+      </div>
+
+      {/* Icon with animated ring */}
+      <div className="relative mb-4 w-14 h-14 flex items-center justify-center">
+        {/* Pulsing ring */}
+        <div
+          className={`absolute inset-0 rounded-xl border-2 border-primary/30 transition-all duration-500 ${
+            isHovered ? 'scale-110 border-primary/60' : ''
+          }`}
+          style={{
+            animation: isHovered ? 'pulse-glow 2s ease-in-out infinite' : 'none',
+          }}
+        />
+        {/* Icon background */}
+        <div className={`relative w-full h-full rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center transition-transform duration-500 ${
+          isHovered ? 'scale-110 rotate-3' : ''
+        }`}>
+          <span className="material-symbols-outlined text-white text-2xl fill-1"
+            style={{ fontVariationSettings: "'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24" }}
+          >
+            {item.icon}
+          </span>
+        </div>
+      </div>
+
+      {/* Title with underline animation */}
+      <div className="relative mb-2">
+        <span className="text-primary font-black text-lg group-hover:text-amber-400 transition-colors duration-300">
+          {item.title}
+        </span>
+        <div className={`h-0.5 bg-gradient-to-r from-primary to-amber-400 mt-1 transition-all duration-500 ${
+          isHovered ? 'w-full' : 'w-0'
+        }`} />
+      </div>
+
+      {/* Description */}
+      <p className="text-white/70 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">
+        {item.desc}
+      </p>
+
+      {/* Bottom shine line */}
+      <div className={`absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-transparent via-primary/60 to-transparent transition-all duration-700 ${
+        isHovered ? 'w-full' : 'w-0'
+      }`} />
+    </div>
+  );
+};
 
 const AboutUs = () => {
   return (
@@ -87,7 +220,7 @@ const AboutUs = () => {
 
         {/* ===== WHAT WE STAND FOR ===== */}
         <div className="text-center mb-16">
-          <h3 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-8">
+          <h3 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-10">
             What We <span style={{
               background: 'linear-gradient(135deg, #f49434 0%, #fbbf24 100%)',
               WebkitBackgroundClip: 'text',
@@ -95,27 +228,10 @@ const AboutUs = () => {
               backgroundClip: 'text',
             }}>Stand For</span>
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-3xl mx-auto">
-            <div className="rounded-xl p-5 text-left bg-[#231c12]/80 border border-[#3d2e1a]/40 hover:border-primary/30 transition-colors">
-              <span className="text-primary font-black text-lg">Real Food</span>
-              <p className="text-white/80 text-sm mt-1">Ingredients you recognize and trust</p>
-            </div>
-            <div className="rounded-xl p-5 text-left bg-[#231c12]/80 border border-[#3d2e1a]/40 hover:border-primary/30 transition-colors">
-              <span className="text-primary font-black text-lg">Minimal Processing</span>
-              <p className="text-white/80 text-sm mt-1">No unnecessary intervention</p>
-            </div>
-            <div className="rounded-xl p-5 text-left bg-[#231c12]/80 border border-[#3d2e1a]/40 hover:border-primary/30 transition-colors">
-              <span className="text-primary font-black text-lg">Natural Nutrition</span>
-              <p className="text-white/80 text-sm mt-1">No artificial flavours, colours, or preservatives</p>
-            </div>
-            <div className="rounded-xl p-5 text-left bg-[#231c12]/80 border border-[#3d2e1a]/40 hover:border-primary/30 transition-colors">
-              <span className="text-primary font-black text-lg">Guilt-Free Snacking</span>
-              <p className="text-white/80 text-sm mt-1">Good for your body, every day</p>
-            </div>
-            <div className="rounded-xl p-5 text-left sm:col-span-2 lg:col-span-2 bg-[#231c12]/80 border border-[#3d2e1a]/40 hover:border-primary/30 transition-colors">
-              <span className="text-primary font-black text-lg">Tradition Meets Today</span>
-              <p className="text-white/80 text-sm mt-1">Ancient wisdom, modern quality standards</p>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl mx-auto">
+            {standForItems.map((item, index) => (
+              <StandForCard key={index} item={item} />
+            ))}
           </div>
         </div>
 

@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const LaunchingSoon = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const imgRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setIsVisible(true);
+      },
+      { threshold: 0.2 }
+    );
+    if (imgRef.current) observer.observe(imgRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="py-20 px-6 relative overflow-hidden"
       style={{ background: 'linear-gradient(135deg, #f49434 0%, #e07b1a 40%, #d4680f 100%)' }}
@@ -25,6 +39,25 @@ const LaunchingSoon = () => {
             >
               shubha prasaadam makhana
             </span>
+          </div>
+        </div>
+
+        {/* Product 2 Image */}
+        <div
+          ref={imgRef}
+          className={`mt-12 max-w-md mx-auto transition-all duration-700 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          <div className="rounded-2xl overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-500"
+            style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.4)' }}
+          >
+            <img
+              src="/images/product2.png"
+              alt="Shubha Prasaadam Makhana - Premium Fox Nuts"
+              className="w-full h-auto object-cover"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
