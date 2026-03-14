@@ -45,7 +45,7 @@ const LaunchingSoon = () => {
         {/* Product 2 Image */}
         <div
           ref={imgRef}
-          className={`mt-12 max-w-md mx-auto transition-all duration-700 ${
+          className={`mt-12 max-w-2xl md:max-w-3xl mx-auto transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
@@ -55,7 +55,7 @@ const LaunchingSoon = () => {
             <img
               src="/images/product2.png"
               alt="Shubha Prasaadam Makhana - Premium Fox Nuts"
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-contain bg-[#fff6e8]"
               loading="lazy"
             />
           </div>
