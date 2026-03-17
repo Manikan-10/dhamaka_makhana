@@ -11,7 +11,6 @@ const marqueeItems = [
   "RAW FOX NUTS",
   "RICH IN CALCIUM",
   "GLUTEN FREE",
-  "ANCIENT SUPERFOOD",
 ];
 
 const MarqueeTicker = () => {

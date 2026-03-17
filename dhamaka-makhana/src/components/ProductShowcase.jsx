@@ -4,7 +4,6 @@ const productImages = [
   {
     src: "/images/product1.jpeg",
     alt: "Dhamaka Makhana - The Ancient Indian Superfood",
-    name: "Dhamaka Makhana",
   },
 ];
 
@@ -42,13 +41,6 @@ const ProductImageCard = ({ image, index }) => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
       </div>
-
-      <div className="p-6 md:p-8">
-        <h4 className="text-2xl md:text-3xl font-black uppercase tracking-wide text-primary mb-1 text-left">
-          {image.name}
-        </h4>
-        <p className="text-sm md:text-base text-[#d4cdc4] text-left">Crunchy. Clean. Legendary.</p>
-      </div>
     </div>
   );
 };
@@ -58,16 +50,10 @@ const ProductShowcase = () => {
     <section id="products" className="py-16 px-6 relative">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 max-w-4xl">
-          <h3 className="text-4xl md:text-6xl font-black uppercase tracking-tighter animate-zoom-pulse text-left">
-            <span style={{
-              background: 'linear-gradient(135deg, #f49434 0%, #fbbf24 50%, #f49434 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}>Dhamaka</span>{' '}
-            <span className="text-white">Snacks Company</span>
+          <h3 className="text-4xl md:text-6xl font-black uppercase tracking-tighter animate-zoom-pulse text-left text-white">
+            Our Products
           </h3>
-          <p className="text-xl md:text-2xl font-bold mt-3 uppercase tracking-wide text-left"
+          <p className="text-2xl md:text-4xl font-black mt-4 uppercase tracking-tight text-left"
             style={{
               background: 'linear-gradient(135deg, #f49434 0%, #fbbf24 100%)',
               WebkitBackgroundClip: 'text',
@@ -75,10 +61,7 @@ const ProductShowcase = () => {
               backgroundClip: 'text',
             }}
           >
-            Premium Fox Nuts
-          </p>
-          <p className="text-base md:text-lg text-[#b7aa95] mt-3 text-justify">
-            Premium Fox Nuts — The Ancient Indian Superfood
+            High Quality, Big, Bold, DHAMAKEDAAR Makhana!
           </p>
         </div>
 

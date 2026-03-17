@@ -15,7 +15,7 @@ const CartoonStrips = () => {
                 backgroundClip: "text",
               }}
             >
-              The Story for Mighty Makhana.
+              The Story of the Mighty Makhana.
             </span>
           </h3>
         </div>

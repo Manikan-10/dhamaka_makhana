@@ -44,24 +44,16 @@ function App() {
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter leading-tight animate-slide-up text-white">
             The Ancient Indian
             <br />
-            <span style={{
-              background: 'linear-gradient(135deg, #f49434 0%, #fbbf24 50%, #f49434 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}>Superfood</span>
+            Superfood
           </h2>
-          <p className="mt-4 text-lg text-[#e0d8d0] animate-slide-up" style={{opacity:0, animationFillMode:'forwards', animationDelay:'0.2s'}}>
-            Premium Fox Nuts — The Ancient Indian Superfood
-          </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-4 animate-slide-up delay-200" style={{opacity:0, animationFillMode:'forwards', animationDelay:'0.3s'}}>
-            <span className="bg-gradient-to-r from-red-700 to-red-600 text-white font-black px-5 py-2 rounded-full text-sm md:text-base shadow-lg">
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 animate-slide-up delay-200 w-full max-w-6xl mx-auto" style={{opacity:0, animationFillMode:'forwards', animationDelay:'0.3s'}}>
+            <span className="bg-gradient-to-r from-red-700 to-red-600 text-white font-black px-8 py-4 rounded-full text-xl md:text-4xl shadow-lg uppercase tracking-wide w-full text-center">
               HIGH PROTEIN
             </span>
-            <span className="bg-gradient-to-r from-amber-600 to-amber-500 text-white font-black px-5 py-2 rounded-full text-sm md:text-base shadow-lg">
+            <span className="bg-gradient-to-r from-amber-600 to-amber-500 text-white font-black px-8 py-4 rounded-full text-xl md:text-4xl shadow-lg uppercase tracking-wide w-full text-center">
               LOW FAT
             </span>
-            <span className="bg-gradient-to-r from-teal-700 to-teal-600 text-white font-black px-5 py-2 rounded-full text-sm md:text-base shadow-lg">
+            <span className="bg-gradient-to-r from-teal-700 to-teal-600 text-white font-black px-8 py-4 rounded-full text-xl md:text-4xl shadow-lg uppercase tracking-wide w-full text-center">
               GUILT FREE SNACK
             </span>
           </div>

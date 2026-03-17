@@ -37,6 +37,21 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* KAMYA venture branding */}
+        <div className="mb-12 text-center">
+          <p className="text-xl md:text-2xl font-black uppercase tracking-[0.14em] text-[#f6cf8b] mb-5">
+            A KAMYA Venture
+          </p>
+          <div className="mx-auto max-w-md rounded-3xl border border-[#3a2b18] bg-black/60 px-6 py-5 shadow-[0_16px_40px_rgba(0,0,0,0.55)]">
+            <img
+              src="/images/Kamya logo.png"
+              alt="Kamya Logo"
+              className="w-full h-auto object-contain"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
         {/* Bottom */}
         <div className="pt-6 border-t border-[#2a2015] text-center">
           <p className="text-sm font-bold text-[#5a5040]">

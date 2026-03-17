@@ -7,21 +7,10 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 w-full bg-[#1a1209]/97 backdrop-blur-lg border-b border-[#2a2015]/80 px-6 md:px-12 py-3"
       style={{ boxShadow: '0 4px 30px rgba(0,0,0,0.4)' }}
     >
-      <nav className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Logo - left side */}
-        <div className="flex items-center gap-3">
-          <img
-            src="/images/Updated_logo-removebg-preview-removebg-preview.png"
-            alt="Dhamaka Snacks Company"
-            className="h-10 md:h-12 w-auto object-contain"
-            style={{
-              filter: 'drop-shadow(0 0 10px rgba(244, 148, 52, 0.5)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4))',
-            }}
-          />
-        </div>
+      <nav className="max-w-7xl mx-auto flex items-center">
 
         {/* Desktop Navigation - pushed to the right */}
-        <div className="hidden md:flex items-center gap-10 font-bold uppercase text-sm tracking-widest text-[#c4b89a]">
+        <div className="hidden md:flex items-center gap-10 font-bold uppercase text-sm tracking-widest text-[#c4b89a] ml-auto">
           <a className="hover:text-primary transition-colors cursor-pointer" href="#home">
             Home
           </a>
@@ -37,7 +26,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center">
+        <div className="md:hidden flex items-center ml-auto">
           <button
             className="p-2 hover:bg-primary/20 rounded-full transition-colors text-[#c4b89a]"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

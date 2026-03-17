@@ -28,6 +28,9 @@ const LaunchingSoon = () => {
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <div className="animate-bounce-in">
+          <p className="text-lg md:text-2xl font-black uppercase tracking-wide text-[#1a1209] mb-5">
+            Our Upcoming Product -
+          </p>
           <div className="inline-block bg-[#1a1209] px-10 py-6 rounded-2xl animate-pulse-glow">
             <span className="text-3xl md:text-5xl lg:text-6xl tracking-wide font-samarkan"
               style={{
@@ -37,7 +40,7 @@ const LaunchingSoon = () => {
                 backgroundClip: 'text',
               }}
             >
-              shubha prasaadam makhana
+              Shubh Prasadam Makhana
             </span>
           </div>
         </div>
@@ -54,7 +57,7 @@ const LaunchingSoon = () => {
           >
             <img
               src="/images/product2.png"
-              alt="Shubha Prasaadam Makhana - Premium Fox Nuts"
+              alt="Shubh Prasadam Makhana - Premium Fox Nuts"
               className="w-full h-auto object-contain bg-[#fff6e8]"
               loading="lazy"
             />
