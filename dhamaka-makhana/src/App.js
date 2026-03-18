@@ -57,17 +57,17 @@ function App() {
               GUILT FREE SNACK
             </span>
           </div>
-          <div className="mt-6 flex flex-wrap justify-center gap-3 animate-slide-up" style={{opacity:0, animationFillMode:'forwards', animationDelay:'0.5s'}}>
-            <span className="bg-[#2a2015] text-[#c4a878] font-bold px-4 py-1.5 rounded-full text-xs md:text-sm border border-[#3d2e1a]/50">
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 animate-slide-up w-full max-w-6xl mx-auto" style={{opacity:0, animationFillMode:'forwards', animationDelay:'0.5s'}}>
+            <span className="bg-gradient-to-r from-[#5a3a1a] to-[#3d2813] text-[#f5d5a4] font-black px-8 py-4 rounded-full text-lg md:text-2xl shadow-lg uppercase tracking-wide w-full text-center border border-[#7a5228]/40">
               No Preservatives
             </span>
-            <span className="bg-[#1a2a15] text-[#8bc47a] font-bold px-4 py-1.5 rounded-full text-xs md:text-sm border border-[#2a3d1a]/50">
+            <span className="bg-gradient-to-r from-[#1f4f1d] to-[#143515] text-[#b8ef9c] font-black px-8 py-4 rounded-full text-lg md:text-2xl shadow-lg uppercase tracking-wide w-full text-center border border-[#3a7a2e]/40">
               No Added Oil
             </span>
-            <span className="bg-[#2a1a2a] text-[#c49ade] font-bold px-4 py-1.5 rounded-full text-xs md:text-sm border border-[#3d1a3d]/50">
+            <span className="bg-gradient-to-r from-[#4a285d] to-[#341947] text-[#ddbcff] font-black px-8 py-4 rounded-full text-lg md:text-2xl shadow-lg uppercase tracking-wide w-full text-center border border-[#6d3f89]/40">
               No Artificial Flavors
             </span>
-            <span className="bg-[#2a1520] text-[#de9aaf] font-bold px-4 py-1.5 rounded-full text-xs md:text-sm border border-[#3d1a2a]/50">
+            <span className="bg-gradient-to-r from-[#5b1f3d] to-[#3f152a] text-[#ffbed7] font-black px-8 py-4 rounded-full text-lg md:text-2xl shadow-lg uppercase tracking-wide w-full text-center border border-[#7d2c55]/40">
               No Salt
             </span>
           </div>
