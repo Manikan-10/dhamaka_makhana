@@ -4,22 +4,22 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#1a1209]/97 backdrop-blur-lg border-b border-[#2a2015]/80 px-6 md:px-12 py-4"
+    <header className="sticky top-0 z-50 w-full bg-[#1a1209]/97 backdrop-blur-lg border-b border-[#2a2015]/80 px-3 sm:px-4 md:px-12 py-3 md:py-4"
       style={{ boxShadow: '0 4px 30px rgba(0,0,0,0.4)' }}
     >
       <nav className="max-w-7xl mx-auto flex items-center">
-        <a href="#home" className="flex flex-col items-center leading-none shrink-0">
+        <a href="#home" className="flex flex-col items-start leading-none shrink-0">
           <img
             src="/images/Kamya%20logo.png"
             alt="Kamya"
-            className="h-14 md:h-16 w-auto object-contain"
+            className="h-10 sm:h-11 md:h-16 w-auto object-contain"
           />
-          <p className="mt-1 text-[17px] md:text-[20px] tracking-[0.2em] uppercase text-[#d5c6a7] flex items-center justify-center gap-2.5 relative left-3 md:left-4 text-center">
+          <p className="mt-1 text-[11px] sm:text-[12px] md:text-[20px] tracking-[0.16em] md:tracking-[0.2em] uppercase text-[#d5c6a7] flex items-center justify-start gap-1.5 sm:gap-2.5 md:gap-2.5 text-left whitespace-nowrap">
             <span>A</span>
             <img
               src="/images/Kamya%20logo.png"
               alt="Kamya mini"
-              className="h-7 md:h-8 w-auto object-contain opacity-100 brightness-110 saturate-125"
+              className="h-4 sm:h-5 md:h-8 w-auto object-contain opacity-100 brightness-110 saturate-125"
             />
             <span>Venture</span>
           </p>
@@ -42,7 +42,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center ml-auto">
+        <div className="md:hidden flex items-center ml-auto -mr-1">
           <button
             className="p-2 hover:bg-primary/20 rounded-full transition-colors text-[#c4b89a]"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
